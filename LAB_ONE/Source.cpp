@@ -1,14 +1,12 @@
 #include <iostream>
 #include <string>
-#include <Windows.h>
-#include <vector>
 using namespace std;
 class FIO {
 public:
 	std::string FirstName;
 	std::string MiddleName;
 	std::string LastName;
-	FIO() { // класс фио пациента
+	FIO() { // ГЄГ«Г Г±Г± ГґГЁГ® ГЇГ Г¶ГЁГҐГ­ГІГ 
 		FirstName = "alla";
 		MiddleName = "pugazeva";
 		LastName = "andreevna";
@@ -23,7 +21,7 @@ public:
 		MiddleName = g.MiddleName;
 		LastName = g.LastName;
 	}
-	FIO& operator=(const FIO& f) { // перегрузка оператора =
+	FIO& operator=(const FIO& f) { // ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  =
 		if (this != &f) {
 			this->FirstName = f.FirstName;
 			this->MiddleName = f.MiddleName;
@@ -35,15 +33,15 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const FIO& f);
 	friend std::istream& operator>>(std::istream& in, FIO& f);
 };
-std::ostream& operator<<(std::ostream& out, const FIO& f) {   // перегрузка вывода
+std::ostream& operator<<(std::ostream& out, const FIO& f) {   // ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  ГўГ»ГўГ®Г¤Г 
 	out << "<" << f.FirstName << f.MiddleName << f.LastName << ">";
 	return out;
 };
-std::istream& operator>>(std::istream& in, FIO& f) { // перегрузка ввода
+std::istream& operator>>(std::istream& in, FIO& f) { // ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  ГўГўГ®Г¤Г 
 	in >> f.FirstName >> f.MiddleName >> f.LastName;
 	return in;
 };
-class Phone { // номер телефона
+class Phone { // Г­Г®Г¬ГҐГ° ГІГҐГ«ГҐГґГ®Г­Г 
 public:
 	std::string phone;
 	Phone() {
@@ -85,7 +83,7 @@ std::istream& operator>>(std::istream& in, Phone& g) {
 	in >> g.phone;
 	return in;
 };
-class Data { // Дата приёма
+class Data { // Г„Г ГІГ  ГЇГ°ГЁВёГ¬Г 
 public:
 	int day;
 	int month;
@@ -232,7 +230,7 @@ std::istream& operator>>(std::istream& in, Doctor& doc) {
 	in >> doc.doctorfio>>doc.doctorphone;
 	return in;
 };
-enum Servis { primaryreception, readmission, bloodtest, ultrasound, No };// первичный прием. второй прием. тест крови. узи
+enum Servis { primaryreception, readmission, bloodtest, ultrasound, No };// ГЇГҐГ°ГўГЁГ·Г­Г»Г© ГЇГ°ГЁГҐГ¬. ГўГІГ®Г°Г®Г© ГЇГ°ГЁГҐГ¬. ГІГҐГ±ГІ ГЄГ°Г®ГўГЁ. ГіГ§ГЁ
 
 class Patient {
 private:
@@ -308,7 +306,7 @@ public:
 		receipt() {
 			a = 1;
 			size = 0;
-			chek = new Patient[a];//выделение памяти для пациента
+			chek = new Patient[a];//ГўГ»Г¤ГҐГ«ГҐГ­ГЁГҐ ГЇГ Г¬ГїГІГЁ Г¤Г«Гї ГЇГ Г¶ГЁГҐГ­ГІГ 
 		}
 		receipt(int _a) {
 			a = _a;
