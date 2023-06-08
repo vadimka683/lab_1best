@@ -45,7 +45,7 @@ class Phone { // íîìåð òåëåôîíà
 public:
 	std::string phone;
 	Phone() {
-		phone = "null";
+		phone = "+7000000000";
 	}
 	Phone(std::string _phone) {
 		phone = _phone;
@@ -70,7 +70,7 @@ public:
 	std::string Get_phone() {
 		return phone;
 	}
-	Phone& operator=(Phone& p) {
+	Phone& operator=(const Phone& p) {
 		phone = p.Get_phone();
 		return *this;
 	}
@@ -273,7 +273,8 @@ public:
 		patientPhone = dor.Get_patientPhone();
 		return *this;
 	};
-	friend std::istream& operator>>(std::istream& in, Patient& dor) {
+};
+	 std::istream& operator>>(std::istream& in, Patient& dor) {
 		std::cout << "\n1.primaryreception\n2.readmission\n3.bloodtest\n4.ultrasound";
 		int n = 0;
 		in >> n;
@@ -288,7 +289,7 @@ public:
 		std::cout << "Enter the Phone:";
 		in >> dor.patientPhone;
 	};
-	friend std::ostream& operator<<(std::ostream& out, const Patient& dor) {
+	 std::ostream& operator<<(std::ostream& out, const Patient& dor) {
 		if (dor.servis == primaryreception) out << "servis - primaryreception";
 		else if (dor.servis == readmission) out << "servis - readmission";
 		else if (dor.servis == bloodtest)  out << "servis - bloodtest";
